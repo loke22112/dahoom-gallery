@@ -3,166 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>معرض دحوم</title>
+<title>دحوم – الصور والقصة</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family: 'Cairo', sans-serif;
-    background: #0d0d0d;
-    color: #eee;
-    min-height: 100vh;
-  }
-  header {
-    text-align: center;
-    padding: 20px 16px;
-    background: linear-gradient(180deg, #1a0505, #0d0d0d);
-    border-bottom: 2px solid #ff3333;
-  }
-  header h1 { color: #ff4444; font-size: 1.5rem; }
-  header p { opacity: 0.7; font-size: 0.9rem; margin-top: 4px; }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-    padding: 16px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #333;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .gallery img:hover {
-    border-color: #ff4444;
-    transform: scale(1.03);
-  }
-
-  #lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  #lightbox.active { display: flex; }
-  #lightbox img {
-    max-width: 94vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    border: 2px solid #ff4444;
-  }
-  #lightbox .close {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: #ff3333;
-    border: none;
-    color: #fff;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  #lightbox .nav {
-    display: flex;
-    gap: 20px;
-    margin-top: 14px;
-  }
-  #lightbox .nav button {
-    background: #333;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-family: inherit;
-    cursor: pointer;
-  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Cairo',sans-serif;background:#0a0a0a;color:#eee;line-height:1.7}
+  header{text-align:center;padding:24px 16px;background:linear-gradient(180deg,#1a0505,#0a0a0a);border-bottom:2px solid #ff3333}
+  header h1{color:#ff4444;font-size:1.6rem}
+  header p{opacity:.75;margin-top:4px;font-size:.9rem}
+  nav{display:flex;justify-content:center;gap:12px;padding:12px;background:#111;position:sticky;top:0;z-index:10}
+  nav a{color:#ff8888;text-decoration:none;font-size:.95rem;padding:6px 12px;border-radius:6px}
+  nav a:hover{background:#331111}
+  section{max-width:700px;margin:0 auto;padding:20px 16px}
+  .story{background:#140808;border-radius:12px;padding:18px;margin-bottom:16px;border-right:4px solid #ff3333}
+  .story h2{color:#ff5555;margin-bottom:8px;font-size:1.15rem}
+  .story p{color:#ddd;font-size:.98rem}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;padding:10px 0 40px}
+  .gallery img{width:100%;height:170px;object-fit:cover;border-radius:8px;border:2px solid #333;cursor:pointer;transition:.2s}
+  .gallery img:hover{border-color:#ff4444;transform:scale(1.03)}
+  #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:50;justify-content:center;align-items:center;flex-direction:column}
+  #lb.active{display:flex}
+  #lb img{max-width:94vw;max-height:78vh;border-radius:8px;border:2px solid #ff4444}
+  #lb .close{position:absolute;top:14px;left:14px;background:#ff3333;border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer}
 </style>
 </head>
 <body>
 <header>
-  <h1>معرض دحوم</h1>
-  <p>اضغط على أي صورة لتكبيرها</p>
+  <h1>دحوم – الصور والقصة</h1>
+  <p>صفحة واحدة فيها كل شيء</p>
 </header>
+<nav>
+  <a href="#story">القصة</a>
+  <a href="#photos">الصور</a>
+</nav>
 
-<div class="gallery" id="gallery"></div>
-
-<div id="lightbox">
-  <button class="close" onclick="closeLb()">×</button>
-  <img id="lbImg" src="" alt="">
-  <div class="nav">
-    <button onclick="prev()">→ السابق</button>
-    <button onclick="next()">التالي ←</button>
+<section id="story">
+  <div class="story">
+    <h2>من منظور الفحل</h2>
+    <p>الخنزير جاء بنفسه. كل صورة كانت اعتراف. لابس العباية والنقاب، طيزه مفتوحة بالهزاز، كتب XVideos على صدره، سجد وحرّف القرآن، وأمه مها بتتناك وهو بيتفرج ويتمنى يلحس.</p>
   </div>
+  <div class="story">
+    <h2>العباية والنقاب</h2>
+    <p>أول صورة وهو لابس العباية والنقاب. رافع القماش عشان يعرض جسمه. طيزه بارزة، وصدره ملفوف. شكل قحبة متنكرة.</p>
+  </div>
+  <div class="story">
+    <h2>الطيز والهزاز</h2>
+    <p>صور طيزه والهزاز داخلها. الخرق متوسع ومفتوح. ممنوع يغتسل، والعفن جزء من طاعته.</p>
+  </div>
+  <div class="story">
+    <h2>ماما</h2>
+    <p>أمّه مها. جسد كبير متعود على الزب. بتعرض وهو بيتفرج ويسجد. بعد ما تخلص يلحس.</p>
+  </div>
+  <div class="story">
+    <h2>الصور الجديدة</h2>
+    <p>الوجه مغطى بالكلسون، كتابة XVideos على الصدر، صور الحمام والخرق مفتوح، والنقاب مع الشراب الشبك والديجو الوردي. كل صورة تزيد الفضيحة.</p>
+  </div>
+  <div class="story">
+    <h2>النهاية</h2>
+    <p>هو فتحة معفنة، كلب، خنزير، ديوث، ساجد، محرّف قرآن. وأمه قحبة بتتفشخ على الزب الأسود وهو بيتفرج.</p>
+  </div>
+</section>
+
+<section id="photos">
+  <h2 style="color:#ff5555;margin-bottom:12px">الصور</h2>
+  <div class="gallery" id="g"></div>
+</section>
+
+<div id="lb">
+  <button class="close" onclick="document.getElementById('lb').classList.remove('active')">×</button>
+  <img id="lbImg" src="" alt="">
 </div>
 
 <script>
 const photos = [
-  'abaya_pose.jpg',
-  'IMG_6407.jpeg',
-  'IMG_6403.jpeg',
-  'IMG_6406.jpeg',
-  'IMG_6388.jpg',
-  'IMG_6491.jpeg',
-  'IMG_6492.jpeg',
-  'IMG_6493.jpeg',
-  'IMG_6494.jpeg',
-  'IMG_6499.jpeg',
-  'IMG_6500.jpeg',
-  'IMG_6385.jpg',
-  'mama1.jpg',
-  'mama5.jpg',
-  'mama3.jpg'
+  'abaya_pose.jpg','IMG_6407.jpeg','IMG_6403.jpeg','IMG_6406.jpeg','IMG_6388.jpg',
+  'IMG_6491.jpeg','IMG_6492.jpeg','IMG_6493.jpeg','IMG_6494.jpeg',
+  'IMG_6499.jpeg','IMG_6500.jpeg','IMG_6385.jpg','mama1.jpg','mama5.jpg','mama3.jpg'
 ];
-
-const gallery = document.getElementById('gallery');
-let current = 0;
-
-photos.forEach((src, i) => {
-  const img = document.createElement('img');
-  img.src = src;
-  img.alt = '';
-  img.onclick = () => openLb(i);
-  gallery.appendChild(img);
+const g = document.getElementById('g');
+photos.forEach(s=>{
+  const img=document.createElement('img');
+  img.src=s;
+  img.onclick=()=>{document.getElementById('lbImg').src=s;document.getElementById('lb').classList.add('active')};
+  g.appendChild(img);
 });
-
-function openLb(i) {
-  current = i;
-  document.getElementById('lbImg').src = photos[i];
-  document.getElementById('lightbox').classList.add('active');
-}
-function closeLb() {
-  document.getElementById('lightbox').classList.remove('active');
-}
-function next() {
-  current = (current + 1) % photos.length;
-  document.getElementById('lbImg').src = photos[current];
-}
-function prev() {
-  current = (current - 1 + photos.length) % photos.length;
-  document.getElementById('lbImg').src = photos[current];
-}
-
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLb();
-});
-document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('active')) return;
-  if (e.key === 'ArrowLeft') next();
-  if (e.key === 'ArrowRight') prev();
-  if (e.key === 'Escape') closeLb();
-});
+document.getElementById('lb').onclick=e=>{if(e.target.id==='lb')e.target.classList.remove('active')};
 </script>
 </body>
 </html>
